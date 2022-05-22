@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css?family=Signika+Negative:300,400&display=swap");
+body {
+  margin: 0;
+  font-family: "Signika Negative", sans-serif;
+  font-weight: 300;
+  background-color: #1d1d1d;
+  color: grey;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  padding: 15px;
+  height: 100vh;
+}
+
+.pen {
+  display: block;
+  position: relative;
+  width: 350px;
+  height: 300px;
+  animation: 4s infinite linear slidein;
+  z-index: 2;
+}
+
+.body-pen {
+  position: absolute;
+  left: 30px;
+  width: 380px;
+  height: 40px;
+  transform: rotate(-40deg);
+  transform-origin: top left;
+  background-color: red;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  animation: 0.25s infinite alternate updownpen,
+    0.5s infinite alternate rotateBody;
+}
+
+.white-stripe {
+  position: absolute;
+  right: 40px;
+  width: 20px;
+  height: 40px;
+  background-color: white;
+}
+
+.black-stripe {
+  position: absolute;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.head-pen {
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 30px;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 50px solid #ffe4ae;
+  transform: rotate(50deg);
+  transform-origin: top left;
+  animation: 0.25s infinite alternate updownpen, 0.5s infinite alternate rotate;
+}
+
+.mine {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 18px solid grey;
+  top: -17px;
+  left: -7px;
+}
+
+.paper {
+  position: absolute;
+  height: 40rem;
+  width: 40rem;
+  padding: 20px 50px;
+  margin: 40px;
+  outline: none;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.27) 0.05em,
+      transparent 0.05em
+    ),
+    radial-gradient(circle at 25px 35px, transparent 10px, white 3px);
+  background-size: 100% 4em;
+  -webkit-box-shadow: 9px 4px 7px -10px rgba(66, 66, 66, 1);
+  -moz-box-shadow: 9px 4px 7px -10px rgba(66, 66, 66, 1);
+  box-shadow: 9px 4px 7px -10px rgba(66, 66, 66, 1);
+  z-index: 1;
+}
+
+@keyframes updownpen {
+  from {
+    top: 80%;
+  }
+  to {
+    top: 85%;
+  }
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 4rem;
+  }
+  to {
+    margin-left: 40rem;
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(50deg);
+  }
+  to {
+    transform: rotate(60deg);
+  }
+}
+
+@keyframes rotateBody {
+  from {
+    transform: rotate(-40deg);
+  }
+  to {
+    transform: rotate(-30deg);
+  }
+}
